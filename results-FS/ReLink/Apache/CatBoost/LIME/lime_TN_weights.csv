@@ -1,0 +1,5 @@
+﻿Feature,Weight
+SumCyclomaticModified <= 10.00,0.15026321250350042
+CountLineCode <= 67.00,-0.014324278526988822
+CountLineCodeExe <= 38.50,-0.013402521572172987
+450.00 < CountLine <= 1140.50,-0.0024761888146435486

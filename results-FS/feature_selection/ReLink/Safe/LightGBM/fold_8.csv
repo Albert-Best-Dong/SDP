@@ -1,0 +1,6 @@
+Feature
+CountLineBlank
+CountLineCodeDecl
+CountLineCodeExe
+CountSemicolon
+CountStmtDecl

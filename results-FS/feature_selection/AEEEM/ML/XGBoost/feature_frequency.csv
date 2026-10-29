@@ -1,0 +1,17 @@
+Feature,Frequency
+ck_oo_numberOfPrivateMethods,10
+ck_oo_fanOut,10
+ck_oo_numberOfLinesOfCode,10
+ck_oo_rfc,10
+LDHH_numberOfLinesOfCode,10
+LDHH_rfc,10
+WCHU_numberOfMethodsInherited,9
+ck_oo_cbo,9
+CvsEntropy,8
+LDHH_numberOfMethodsInherited,6
+ck_oo_numberOfAttributes,4
+CvsLogEntropy,2
+CvsLinEntropy,2
+CvsWEntropy,2
+LDHH_wmc,2
+CvsExpEntropy,1

@@ -1,0 +1,12 @@
+Feature,Frequency,Selected_Rate,Rank
+CvsWEntropy,10,100.0,1
+ck_oo_rfc,10,100.0,2
+ck_oo_numberOfLinesOfCode,10,100.0,3
+CvsLinEntropy,10,100.0,4
+CvsEntropy,9,90.0,5
+CvsExpEntropy,9,90.0,6
+CvsLogEntropy,9,90.0,7
+numberOfNonTrivialBugsFoundUntil:,8,80.0,8
+LDHH_numberOfLinesOfCode,6,60.0,9
+LDHH_rfc,5,50.0,10
+ck_oo_wmc,2,20.0,11

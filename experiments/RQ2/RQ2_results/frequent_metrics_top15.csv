@@ -1,0 +1,16 @@
+Feature,Frequency,Share%,Rank
+CvsEntropy,184,23.0,1
+HALSTEAD_CONTENT,180,22.5,2
+loc,169,21.1,3
+CvsLinEntropy,168,21.0,4
+CvsLogEntropy,164,20.5,5
+CvsExpEntropy,160,20.0,6
+ck_oo_numberOfLinesOfCode,156,19.5,7
+LDHH_numberOfLinesOfCode,152,19.0,8
+CvsWEntropy,152,19.0,9
+i,152,19.0,10
+NUMBER_OF_LINES,152,19.0,11
+LOC_BLANK,128,16.0,12
+ck_oo_rfc,128,16.0,13
+PERCENT_COMMENTS,124,15.5,14
+NUM_UNIQUE_OPERANDS,120,15.0,15

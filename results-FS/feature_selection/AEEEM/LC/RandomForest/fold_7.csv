@@ -1,0 +1,9 @@
+Feature
+numberOfNonTrivialBugsFoundUntil:
+CvsEntropy
+CvsLogEntropy
+LDHH_numberOfLinesOfCode
+CvsLinEntropy
+numberOfBugsFoundUntil:
+LDHH_rfc
+CvsExpEntropy

@@ -1,0 +1,10 @@
+Feature,Frequency
+CountLineCodeDecl,10
+CountStmtDecl,10
+CountSemicolon,6
+CountLineCodeExe,5
+CountLineBlank,3
+CountLineCode,1
+CountStmt,1
+CountStmtExe,1
+CountLine,1

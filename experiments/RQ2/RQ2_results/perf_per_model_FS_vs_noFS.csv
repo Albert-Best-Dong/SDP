@@ -1,0 +1,33 @@
+Model,Metric,No-FS mean,FS mean,Delta,Improved/20,Degraded/20
+RandomForest,Accuracy,0.8419,0.8346,-0.0074,5,13
+RandomForest,Precision,0.5533,0.5273,-0.026,6,13
+RandomForest,Recall,0.3236,0.3354,0.0118,10,8
+RandomForest,F1,0.384,0.3837,-0.0004,8,11
+RandomForest,ROC-AUC,0.8002,0.7738,-0.0265,2,18
+RandomForest,MCC,0.3255,0.3112,-0.0143,7,13
+RandomForest,Balanced Accuracy,0.6276,0.6265,-0.0011,8,12
+RandomForest,Specificity,0.9316,0.9177,-0.014,4,16
+XGBoost,Accuracy,0.8391,0.8361,-0.003,7,12
+XGBoost,Precision,0.5525,0.5275,-0.025,7,12
+XGBoost,Recall,0.3183,0.2829,-0.0355,4,15
+XGBoost,F1,0.3757,0.3353,-0.0404,5,15
+XGBoost,ROC-AUC,0.7874,0.7729,-0.0145,3,17
+XGBoost,MCC,0.3161,0.2818,-0.0343,5,15
+XGBoost,Balanced Accuracy,0.6238,0.6084,-0.0154,5,15
+XGBoost,Specificity,0.9293,0.9339,0.0046,10,8
+LightGBM,Accuracy,0.8369,0.8308,-0.0061,3,17
+LightGBM,Precision,0.552,0.4957,-0.0562,5,15
+LightGBM,Recall,0.3654,0.3382,-0.0272,7,13
+LightGBM,F1,0.4176,0.3779,-0.0397,5,15
+LightGBM,ROC-AUC,0.7852,0.7629,-0.0223,4,16
+LightGBM,MCC,0.3415,0.2993,-0.0421,5,15
+LightGBM,Balanced Accuracy,0.6418,0.6269,-0.0149,5,15
+LightGBM,Specificity,0.9183,0.9157,-0.0026,6,14
+CatBoost,Accuracy,0.8445,0.8357,-0.0087,5,15
+CatBoost,Precision,0.5597,0.5189,-0.0408,5,14
+CatBoost,Recall,0.3154,0.2887,-0.0267,5,13
+CatBoost,F1,0.3738,0.3396,-0.0341,4,15
+CatBoost,ROC-AUC,0.8015,0.7826,-0.0189,3,17
+CatBoost,MCC,0.3209,0.2894,-0.0315,5,15
+CatBoost,Balanced Accuracy,0.6251,0.6103,-0.0148,5,15
+CatBoost,Specificity,0.9349,0.932,-0.0029,6,11

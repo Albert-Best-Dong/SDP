@@ -1,0 +1,16 @@
+﻿Feature,Weight
+ck_oo_fanIn <= 0.00,-0.06974845076132473
+ck_oo_numberOfAttributesInherited <= 0.00,-0.06938394781336736
+ck_oo_fanOut <= 1.00,-0.05347829347847694
+WCHU_numberOfAttributes <= 0.00,0.05239706620169783
+WCHU_fanIn <= 0.00,-0.04316983781609485
+WCHU_rfc <= 0.00,0.03361837706729721
+WCHU_fanOut <= 0.00,0.0324086275141747
+ck_oo_numberOfPrivateAttributes <= 0.00,-0.024128902898509406
+WCHU_numberOfPrivateAttributes <= 0.00,0.022817974672770507
+WCHU_numberOfLinesOfCode <= 0.00,0.019584783848285967
+numberOfMajorBugsFoundUntil: <= 0.00,0.01764732004490664
+ck_oo_cbo <= 2.00,-0.014034929711739204
+CvsEntropy <= 0.00,-0.012431562274990114
+ck_oo_numberOfPublicMethods <= 1.00,-0.012330130108409063
+WCHU_numberOfPublicAttributes <= 0.00,0.010991275658171375

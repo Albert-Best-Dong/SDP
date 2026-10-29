@@ -1,0 +1,247 @@
+# cross_repo_shap_scheme1.py
+import pandas as pd
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.rcParams['font.family'] = 'Arial'
+plt.rcParams['axes.unicode_minus'] = False
+
+# ========== 1. 人工定义：原始特征 -> 度量族映射 ==========
+feature_family_map = {
+    # ---------------- AEEEM features ----------------
+    "ck_oo_wmc": "OO Metrics",
+    "ck_oo_cbo": "OO Metrics",
+    "ck_oo_rfc": "OO Metrics",
+    "ck_oo_dit": "OO Metrics",
+    "ck_oo_noc": "OO Metrics",
+    "ck_oo_lcom": "OO Metrics",
+    "ck_oo_numberOfAttributes": "OO Metrics",
+    "ck_oo_numberOfPublicAttributes": "OO Metrics",
+    "ck_oo_numberOfPrivateAttributes": "OO Metrics",
+    "ck_oo_numberOfMethods": "OO Metrics",
+    "ck_oo_numberOfPublicMethods": "OO Metrics",
+    "ck_oo_numberOfPrivateMethods": "OO Metrics",
+    "ck_oo_numberOfAttributesInherited": "OO Metrics",
+    "ck_oo_numberOfMethodsInherited": "OO Metrics",
+    "ck_oo_fanIn": "OO Metrics",
+    "ck_oo_fanOut": "OO Metrics",
+    "ck_oo_numberOfLinesOfCode": "Size",
+
+    "LDHH_wmc": "OO Metrics",
+    "LDHH_cbo": "OO Metrics",
+    "LDHH_rfc": "OO Metrics",
+    "LDHH_dit": "OO Metrics",
+    "LDHH_noc": "OO Metrics",
+    "LDHH_lcom": "OO Metrics",
+    "LDHH_numberOfAttributes": "OO Metrics",
+    "LDHH_numberOfPublicAttributes": "OO Metrics",
+    "LDHH_numberOfPrivateAttributes": "OO Metrics",
+    "LDHH_numberOfMethods": "OO Metrics",
+    "LDHH_numberOfPublicMethods": "OO Metrics",
+    "LDHH_numberOfPrivateMethods": "OO Metrics",
+    "LDHH_numberOfAttributesInherited": "OO Metrics",
+    "LDHH_numberOfMethodsInherited": "OO Metrics",
+    "LDHH_fanIn": "OO Metrics",
+    "LDHH_fanOut": "OO Metrics",
+    "LDHH_numberOfLinesOfCode": "Size",
+
+    "WCHU_wmc": "OO Metrics",
+    "WCHU_cbo": "OO Metrics",
+    "WCHU_rfc": "OO Metrics",
+    "WCHU_dit": "OO Metrics",
+    "WCHU_noc": "OO Metrics",
+    "WCHU_lcom": "OO Metrics",
+    "WCHU_numberOfAttributes": "OO Metrics",
+    "WCHU_numberOfPublicAttributes": "OO Metrics",
+    "WCHU_numberOfPrivateAttributes": "OO Metrics",
+    "WCHU_numberOfMethods": "OO Metrics",
+    "WCHU_numberOfPublicMethods": "OO Metrics",
+    "WCHU_numberOfPrivateMethods": "OO Metrics",
+    "WCHU_numberOfAttributesInherited": "OO Metrics",
+    "WCHU_numberOfMethodsInherited": "OO Metrics",
+    "WCHU_fanIn": "OO Metrics",
+    "WCHU_fanOut": "OO Metrics",
+    "WCHU_numberOfLinesOfCode": "Size",
+
+    "CvsEntropy": "Evolution Metrics",
+    "CvsWEntropy": "Evolution Metrics",
+    "CvsLogEntropy": "Evolution Metrics",
+    "CvsExpEntropy": "Evolution Metrics",
+    "CvsLinEntropy": "Evolution Metrics",
+
+    "numberOfBugsFoundUntil:": "Bug History",
+    "numberOfNonTrivialBugsFoundUntil:": "Bug History",
+    "numberOfMajorBugsFoundUntil:": "Bug History",
+    "numberOfCriticalBugsFoundUntil:": "Bug History",
+    "numberOfHighPriorityBugsFoundUntil:": "Bug History",
+
+    # ---------------- NASA / PROMISE features (Halstead, cyclomatic, size) ----------------
+    "LOC_COMMENTS": "Comment & Blank",
+    "LOC_BLANK": "Comment & Blank",
+    "LOC_CODE_AND_COMMENT": "Size",
+    "LOC_EXECUTABLE": "Size",
+    "LOC_TOTAL": "Size",
+    "NUMBER_OF_LINES": "Size",
+    "PERCENT_COMMENTS": "Comment & Blank",
+
+    "CYCLOMATIC_COMPLEXITY": "Cyclomatic & Structural Complexity",
+    "CYCLOMATIC_DENSITY": "Cyclomatic & Structural Complexity",
+    "ESSENTIAL_COMPLEXITY": "Cyclomatic & Structural Complexity",
+    "ESSENTIAL_DENSITY": "Cyclomatic & Structural Complexity",
+    "DESIGN_COMPLEXITY": "Cyclomatic & Structural Complexity",
+    "DESIGN_DENSITY": "Cyclomatic & Structural Complexity",
+    "DECISION_COUNT": "Cyclomatic & Structural Complexity",
+    "DECISION_DENSITY": "Cyclomatic & Structural Complexity",
+    "CONDITION_COUNT": "Cyclomatic & Structural Complexity",
+    "MODIFIED_CONDITION_COUNT": "Cyclomatic & Structural Complexity",
+    "MULTIPLE_CONDITION_COUNT": "Cyclomatic & Structural Complexity",
+    "BRANCH_COUNT": "Cyclomatic & Structural Complexity",
+    "EDGE_COUNT": "Cyclomatic & Structural Complexity",
+    "NODE_COUNT": "Cyclomatic & Structural Complexity",
+    "CALL_PAIRS": "Cyclomatic & Structural Complexity",
+
+    "HALSTEAD_LENGTH": "Halstead & Lexical",
+    "HALSTEAD_VOLUME": "Halstead & Lexical",
+    "HALSTEAD_DIFFICULTY": "Halstead & Lexical",
+    "HALSTEAD_CONTENT": "Halstead & Lexical",
+    "HALSTEAD_EFFORT": "Halstead & Lexical",
+    "HALSTEAD_PROG_TIME": "Halstead & Lexical",
+    "HALSTEAD_ERROR_EST": "Halstead & Lexical",
+    "NUM_UNIQUE_OPERATORS": "Halstead & Lexical",
+    "NUM_UNIQUE_OPERANDS": "Halstead & Lexical",
+    "NUM_OPERATORS": "Halstead & Lexical",
+    "NUM_OPERANDS": "Halstead & Lexical",
+    "MAINTENANCE_SEVERITY": "Halstead & Lexical",
+    "NORMALIZED_CYLOMATIC_COMPLEXITY": "Cyclomatic & Structural Complexity",
+
+    # PROMISE short‑name metrics
+    "lOComment": "Comment & Blank",
+    "lOBlank": "Comment & Blank",
+    "loc": "Size",
+    "lOCode": "Size",
+    "locCodeAndComment": "Size",
+    "v(g)": "Cyclomatic & Structural Complexity",
+    "ev(g)": "Cyclomatic & Structural Complexity",
+    "iv(g)": "Cyclomatic & Structural Complexity",
+    "branchCount": "Cyclomatic & Structural Complexity",
+    "uniq_Op": "Halstead & Lexical",
+    "uniq_Opnd": "Halstead & Lexical",
+    "total_Op": "Halstead & Lexical",
+    "total_Opnd": "Halstead & Lexical",
+    "n": "Halstead & Lexical",
+    "v": "Halstead & Lexical",
+    "e": "Halstead & Lexical",
+    "d": "Halstead & Lexical",
+    "i": "Halstead & Lexical",
+    "b": "Halstead & Lexical",
+    "t": "Halstead & Lexical",
+    "l": "Halstead & Lexical",
+
+    # ---------------- ReLink features ----------------
+    "CountLine": "Size",
+    "CountLineCode": "Size",
+    "CountLineCodeExe": "Size",
+    "CountLineCodeDecl": "Size",
+    "CountLineBlank": "Comment & Blank",
+    "CountLineComment": "Comment & Blank",
+    "RatioCommentToCode": "Comment & Blank",
+
+    "SumCyclomatic": "Cyclomatic & Structural Complexity",
+    "SumCyclomaticModified": "Cyclomatic & Structural Complexity",
+    "SumCyclomaticStrict": "Cyclomatic & Structural Complexity",
+    "MaxCyclomatic": "Cyclomatic & Structural Complexity",
+    "MaxCyclomaticModified": "Cyclomatic & Structural Complexity",
+    "MaxCyclomaticStrict": "Cyclomatic & Structural Complexity",
+    "AvgCyclomatic": "Cyclomatic & Structural Complexity",
+    "AvgCyclomaticModified": "Cyclomatic & Structural Complexity",
+    "AvgCyclomaticStrict": "Cyclomatic & Structural Complexity",
+    "AvgEssential": "Cyclomatic & Structural Complexity",
+
+    "CountStmt": "Size",
+    "CountStmtDecl": "Size",
+    "CountStmtExe": "Size",
+    "CountSemicolon": "Size",
+    "AvgLine": "Size",
+    "AvgLineCode": "Size",
+    "AvgLineBlank": "Size",
+    "AvgLineComment": "Size"
+}
+
+# 定义全部7个度量族（固定顺序）
+FAMILIES = [
+    "Size",
+    "Comment & Blank",
+    "Cyclomatic & Structural Complexity",
+    "Halstead & Lexical",
+    "OO Metrics",
+    "Evolution Metrics",
+    "Bug History"
+]
+
+# ========== 2. 读取输入数据 ==========
+df_raw = pd.read_csv("Repository_SHAP_Importance.csv")
+# 映射度量族，未匹配标记为Unknown
+df_raw["metric_family"] = df_raw["feature"].map(feature_family_map).fillna("Unknown")
+
+# 输出映射表（用于补充材料）
+mapping_df = pd.DataFrame(list(feature_family_map.items()), columns=["raw_feature", "metric_family"])
+mapping_df.to_csv("feature_family_mapping.csv", index=False)
+print(f"[INFO] feature‑family mapping saved, total mapped features: {len(mapping_df)}")
+unknown_cnt = (df_raw["metric_family"] == "Unknown").sum()
+print(f"[INFO] Unknown(unmapped) feature rows count: {unknown_cnt}")
+
+# ========== 3. 项目内聚合：同一(repository,project,feature)多模型取平均importance ==========
+df_proj = df_raw.groupby(["repository", "project", "feature", "metric_family"])["importance"].mean().reset_index()
+
+# ========== 4. 仓库级别：每个仓库，每个度量族求和SHAP重要性 ==========
+repo_family = df_proj.groupby(["repository", "metric_family"])["importance"].sum().reset_index()
+
+# 转为宽表，缺失的family填充0
+repo_wide = repo_family.pivot(index="repository", columns="metric_family", values="importance")
+repo_wide = repo_wide.reindex(columns=FAMILIES).fillna(0.0)
+repo_wide.to_csv("repo_family_shap.csv")
+print("\n[INFO] Repository‑MetricFamily aggregated SHAP importance:")
+print(repo_wide.round(4))
+
+# ========== 5. 度量族层面：两两仓库Spearman rank correlation ==========
+repos = repo_wide.index.tolist()
+n_repo = len(repos)
+rho_mat = pd.DataFrame(np.zeros((n_repo, n_repo)), index=repos, columns=repos)
+p_mat = pd.DataFrame(np.zeros((n_repo, n_repo)), index=repos, columns=repos)
+
+for i, r1 in enumerate(repos):
+    for j, r2 in enumerate(repos):
+        arr1 = repo_wide.loc[r1].values
+        arr2 = repo_wide.loc[r2].values
+        rho, pval = stats.spearmanr(arr1, arr2)
+        rho_mat.loc[r1, r2] = rho
+        p_mat.loc[r1, r2] = pval
+
+rho_mat.to_csv("spearman_rho.csv")
+p_mat.to_csv("spearman_pvalue.csv")
+print("\n[INFO] Spearman ρ matrix (metric‑family level):")
+print(rho_mat.round(3))
+print("\n[INFO] p‑value matrix:")
+print(p_mat.round(4))
+
+# ========== 6. 绘图1：各仓库度量族总SHAP柱状图 ==========
+fig, ax = plt.subplots(figsize=(10, 6))
+repo_wide.plot(kind="bar", ax=ax, stacked=True, colormap="tab10")
+ax.set_ylabel("Aggregated SHAP Importance (metric‑family level)")
+ax.set_xlabel("Software Repository")
+ax.set_title("Aggregated SHAP Importance per Metric Family across Repositories")
+ax.legend(title="Metric Family", bbox_to_anchor=(1.02, 1), loc="upper left")
+plt.tight_layout()
+plt.savefig("fig_family_total.png", dpi=300, bbox_inches="tight")
+
+# ========== 7. 绘图2：Spearman 热力图 ==========
+plt.figure(figsize=(7, 5.5))
+sns.heatmap(rho_mat.astype(float), annot=True, fmt=".3f", vmin=-1, vmax=1,
+            cmap="RdBu_r", cbar_kws={"label": "Spearman ρ"})
+plt.title("Pair‑wise Spearman Correlation (Metric‑Family Level)")
+plt.tight_layout()
+plt.savefig("fig_spearman_heatmap.png", dpi=300, bbox_inches="tight")
+
+print("\n[DONE] All output files generated.")

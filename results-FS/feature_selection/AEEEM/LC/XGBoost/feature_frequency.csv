@@ -1,0 +1,12 @@
+Feature,Frequency
+CvsLogEntropy,10
+LDHH_numberOfLinesOfCode,10
+CvsLinEntropy,10
+CvsExpEntropy,10
+CvsEntropy,9
+numberOfBugsFoundUntil:,8
+numberOfNonTrivialBugsFoundUntil:,7
+CvsWEntropy,6
+LDHH_rfc,5
+LDHH_wmc,3
+WCHU_wmc,1

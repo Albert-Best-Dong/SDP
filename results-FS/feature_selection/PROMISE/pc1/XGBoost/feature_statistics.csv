@@ -1,0 +1,9 @@
+Feature,Frequency,Selected_Rate,Rank
+V,10,100.0,1
+I,10,100.0,2
+uniq_Opnd,10,100.0,3
+lOBlank,10,100.0,4
+loc,7,70.0,5
+lOComment,6,60.0,6
+L,2,20.0,7
+total_Op,1,10.0,8

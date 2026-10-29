@@ -1,0 +1,16 @@
+﻿Feature,Weight
+ck_oo_numberOfMethodsInherited <= 0.00,0.20766019712960473
+5.00 < ck_oo_numberOfMethods <= 9.00,-0.14828892921982348
+ck_oo_fanOut > 6.00,0.11736485807311657
+ck_oo_numberOfPrivateMethods > 1.00,0.10947778184391323
+ck_oo_numberOfAttributesInherited <= 0.00,-0.07915324524867283
+WCHU_cbo > 3.03,-0.07234564690322046
+ck_oo_numberOfPublicAttributes <= 0.00,0.06255935992772559
+WCHU_numberOfAttributes > 0.00,0.05185422518930447
+WCHU_fanOut > 2.02,0.05094828152429483
+WCHU_numberOfLinesOfCode > 2.08,0.0473070950273149
+WCHU_numberOfPublicAttributes <= 0.00,0.046287246923429004
+LDHH_numberOfPrivateMethods > 0.00,0.04272869830443922
+WCHU_rfc > 1.10,0.03952573045819819
+WCHU_fanIn > 1.01,-0.01988684904876175
+LDHH_numberOfPublicAttributes <= 0.00,-0.01510371782468967

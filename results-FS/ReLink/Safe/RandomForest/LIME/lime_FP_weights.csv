@@ -1,0 +1,4 @@
+﻿Feature,Weight
+CountLineCodeDecl <= 9.50,0.0
+CountSemicolon <= 12.50,0.0
+CountStmtDecl <= 9.00,0.0

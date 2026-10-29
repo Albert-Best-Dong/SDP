@@ -1,0 +1,12 @@
+﻿Feature,Weight
+ck_oo_numberOfAttributes <= 0.00,0.0810382174550221
+ck_oo_numberOfMethods <= 2.00,-0.06616841077409062
+CvsEntropy <= 0.00,-0.04802244850651321
+ck_oo_lcom <= 1.00,-0.02381185204223394
+CvsWEntropy <= 0.00,-0.019665664166938452
+CvsLogEntropy <= 0.00,0.012835983512151337
+numberOfBugsFoundUntil: <= 1.00,-0.008059431075095878
+ck_oo_wmc <= 2.00,-0.004440495608398562
+ck_oo_numberOfLinesOfCode <= 6.00,-0.0026993865495648513
+CvsExpEntropy <= 0.00,-0.0016088254720904216
+CvsLinEntropy <= 0.00,-0.0009670913779356962

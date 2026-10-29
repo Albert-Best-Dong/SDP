@@ -1,0 +1,7 @@
+Metric,Value
+Always-selected ratio (100% across 10 runs),44.6%
+"Avg stable core features per (dataset,model)",4.35
+Mean cross-model Jaccard (same dataset),1.00
+Features in >=5 datasets,9
+Features in >=10 datasets,0
+Features in all 20 datasets,0

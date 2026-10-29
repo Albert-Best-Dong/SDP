@@ -1,0 +1,4 @@
+﻿Feature,Weight
+CountLineCodeDecl > 48.00,-5.24918816752512e-32
+CountStmtDecl > 42.00,-3.272736934933147e-32
+CountSemicolon > 89.50,-9.019393899733266e-33

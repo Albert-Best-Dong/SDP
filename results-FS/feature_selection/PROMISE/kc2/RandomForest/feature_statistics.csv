@@ -1,0 +1,14 @@
+Feature,Frequency,Selected_Rate,Rank
+loc,10,100.0,1
+v,10,100.0,2
+i,10,100.0,3
+total_Opnd,10,100.0,4
+uniq_Opnd,10,100.0,5
+b,9,90.0,6
+n,8,80.0,7
+lOCode,5,50.0,8
+e,3,30.0,9
+total_Op,3,30.0,10
+t,3,30.0,11
+lOBlank,1,10.0,12
+uniq_Op,1,10.0,13

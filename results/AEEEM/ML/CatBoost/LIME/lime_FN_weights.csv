@@ -1,0 +1,16 @@
+﻿Feature,Weight
+WCHU_wmc > 1.02,0.045446783412185436
+ck_oo_fanOut > 6.00,0.04289184269113383
+1.00 < ck_oo_numberOfAttributes <= 2.00,-0.04226204743217187
+WCHU_fanIn > 1.01,-0.03784949484492418
+WCHU_rfc > 1.10,0.0366563360385656
+WCHU_cbo > 3.03,-0.03650258498227368
+ck_oo_numberOfPublicAttributes <= 0.00,-0.03147759845013389
+9.16 < CvsLogEntropy <= 9.28,0.026129030193374137
+WCHU_numberOfAttributes > 0.00,0.025169708836518055
+ck_oo_numberOfMethods > 9.00,-0.02485421058011035
+WCHU_numberOfMethods > 0.00,0.020124337593380837
+4.00 < ck_oo_numberOfPublicMethods <= 7.00,-0.019172011289159987
+WCHU_numberOfPrivateMethods <= 0.00,-0.01811637012461696
+LDHH_numberOfPrivateMethods <= 0.00,-0.016614912614356395
+numberOfNonTrivialBugsFoundUntil: > 4.00,0.016373540455388667

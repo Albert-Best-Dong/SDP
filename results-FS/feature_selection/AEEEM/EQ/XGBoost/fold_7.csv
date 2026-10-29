@@ -1,0 +1,13 @@
+Feature
+CvsWEntropy
+CvsEntropy
+ck_oo_wmc
+CvsLogEntropy
+ck_oo_numberOfLinesOfCode
+ck_oo_numberOfMethods
+ck_oo_lcom
+ck_oo_cbo
+ck_oo_numberOfAttributes
+CvsLinEntropy
+numberOfBugsFoundUntil:
+CvsExpEntropy

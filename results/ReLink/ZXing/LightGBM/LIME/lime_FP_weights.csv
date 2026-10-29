@@ -1,0 +1,16 @@
+﻿Feature,Weight
+AvgLineComment > 0.00,0.28294015533936595
+AvgLineBlank <= 0.00,0.17279640714215347
+2.00 < MaxCyclomaticModified <= 5.00,0.15880387058832998
+AvgEssential <= 1.00,0.09468188869634635
+1.00 < CountLineComment <= 14.00,-0.092901977189493
+2.00 < MaxCyclomatic <= 5.00,0.06144560403255119
+2.00 < SumEssential <= 4.00,-0.04777017020371314
+2.00 < SumCyclomaticStrict <= 7.00,-0.03531544566381532
+2.00 < SumCyclomatic <= 6.00,0.024971189804404048
+0.04 < RatioCommentToCode <= 0.18,0.024190384176795178
+14.00 < CountLineCode <= 35.00,-0.014958452681208129
+AvgCyclomaticModified <= 1.00,-0.013801777531046546
+AvgCyclomaticStrict <= 1.00,-0.013290397180776885
+2.00 < SumCyclomaticModified <= 6.00,0.01104645454230408
+AvgCyclomatic <= 1.00,-0.010469731807375331

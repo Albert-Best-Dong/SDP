@@ -1,0 +1,4 @@
+Feature,Frequency,Selected_Rate,Rank
+CountLineCode,8,80.0,1
+CountLineCodeDecl,3,30.0,2
+CountLine,2,20.0,3

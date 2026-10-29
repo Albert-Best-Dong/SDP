@@ -1,0 +1,8 @@
+﻿Feature,Weight
+CvsEntropy <= 3.80,0.02635730546058853
+CvsLinEntropy <= 0.01,0.00933677999162329
+CvsLogEntropy <= 0.11,0.0074181419177481635
+CvsWEntropy <= 0.00,-0.00609963679813941
+0.00 < numberOfNonTrivialBugsFoundUntil: <= 1.00,-0.0045572386964251865
+53.00 < ck_oo_numberOfLinesOfCode <= 116.25,-0.002870109729619537
+26.00 < ck_oo_rfc <= 58.00,9.385436123614268e-05

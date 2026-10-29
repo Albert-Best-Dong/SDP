@@ -1,0 +1,16 @@
+﻿Feature,Weight
+numberOfMajorBugsFoundUntil: > 0.00,0.01760335724774301
+WCHU_numberOfAttributes > 1.01,0.017575621752005034
+numberOfNonTrivialBugsFoundUntil: > 3.00,0.014756887560052535
+LDHH_numberOfPublicAttributes > 0.00,0.013046564570780945
+WCHU_numberOfPublicAttributes > 0.00,0.011207957628752645
+ck_oo_numberOfPrivateAttributes > 4.00,0.010140184387291884
+numberOfBugsFoundUntil: > 4.00,0.00896249028986739
+ck_oo_dit <= 1.00,0.00829355995309141
+ck_oo_numberOfMethodsInherited <= 6.00,0.007993866245244024
+ck_oo_wmc > 28.00,-0.006606103676045659
+WCHU_wmc > 2.12,-0.006428738832884687
+ck_oo_numberOfAttributesInherited <= 0.00,0.005541237035746322
+numberOfCriticalBugsFoundUntil: > 0.00,0.004824329595106617
+WCHU_cbo > 3.04,-0.004509255925795081
+WCHU_numberOfMethods > 1.04,0.004267832166025732

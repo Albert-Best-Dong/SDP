@@ -1,0 +1,12 @@
+﻿Feature,Weight
+ck_oo_fanOut <= 1.00,-0.26747378255031334
+CvsLogEntropy <= 0.10,0.06794121854820001
+ck_oo_cbo <= 2.00,0.055265200168762324
+WCHU_numberOfMethodsInherited <= 0.00,-0.05386576975635197
+ck_oo_numberOfLinesOfCode <= 13.00,0.0423918114421766
+ck_oo_rfc <= 6.00,-0.041458264688474765
+0.00 < ck_oo_numberOfPrivateMethods <= 1.00,-0.03215131489417794
+LDHH_rfc <= 0.00,-0.005067700234967063
+CvsLinEntropy <= 0.01,0.004552002471316638
+LDHH_numberOfMethodsInherited <= 0.00,0.0026825091785345387
+LDHH_numberOfLinesOfCode <= 0.00,0.0008803193640432871

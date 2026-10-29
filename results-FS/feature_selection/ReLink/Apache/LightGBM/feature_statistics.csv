@@ -1,0 +1,6 @@
+Feature,Frequency,Selected_Rate,Rank
+CountLine,10,100.0,1
+CountLineCode,10,100.0,2
+CountLineCodeExe,8,80.0,3
+SumCyclomaticModified,7,70.0,4
+CountLineBlank,2,20.0,5
