@@ -22,7 +22,7 @@ SAVE_MODEL=False
 
 USE_FEATURE_SELECTION=True
 USE_BORUTA = False
-
+USE_SHAP = True
 USE_LIME = False
 # ===============================
 # 数据集配置
